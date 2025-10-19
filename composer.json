@@ -1,0 +1,18 @@
+{
+  "name": "stracker-phil/unit-testing-workshop",
+  "description": "Mini project to showcase unit testing",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "WorkshopPlugin\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  },
+  "scripts": {
+  },
+  "require-dev": {
+  }
+}

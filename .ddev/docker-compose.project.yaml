@@ -1,0 +1,5 @@
+services:
+  web:
+    volumes:
+      - ../:/var/www/html/.ddev/wordpress/wp-content/plugins/${DDEV_PROJECT}:ro
+      - ../coverage:/var/www/html/.ddev/wordpress/coverage:ro
