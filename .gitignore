@@ -1,5 +1,8 @@
 # Composer
 /vendor/
 
+# PHPUnit code coverage
+/coverage/
+
 # WordPress
 /.ddev/wordpress
