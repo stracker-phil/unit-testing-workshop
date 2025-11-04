@@ -1,6 +1,6 @@
 <?php
 /**
- * @covers BookingValidator
+ * @covers \WorkshopPlugin\BookingValidator
  */
 
 declare( strict_types = 1 );
