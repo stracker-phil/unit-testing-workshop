@@ -8,13 +8,22 @@
 
 ## Workshop Agenda
 
+### Preparation
+
+- [ ] Launch DDEV and verify the site works (before the workshop)
+    - `ddev start && ddev orchestrate -f`
+- [ ] Ensure the website works
+    - https://unit-testing-workshop.ddev.site/
+- [ ] Share code-with-me access in Slack
+
 ### Setup Phase
 
-- [ ] Launch DDEV and verify the site works
-    - `ddev start`
 - [ ] Review the sample code we'll test
 - [ ] Install PHPUnit
     - `composer require --dev phpunit/phpunit:~9.6.0`
+- [ ] Setup & confirm it works:
+    - Create (copy) the `phpunit.xml` config file
+    - `ddev exec vendor/bin/phpunit`
 
 ### Manual Testing Basics
 
@@ -24,11 +33,11 @@
 - [ ] Add composer script
     - `"test": "vendor/bin/phpunit"`
 - [ ] **Discussion: What makes a good unit test?**
-    - Isolation (no database, no WordPress functions)
-    - Fast execution
-    - Stubs vs Mocks (when to use each)
-    - Descriptive test names
-    - One assertion per test (or use dataProviders)
+    - **Isolation** (mock everything except the tested class)
+    - **Stubs vs Mocks** (when to use each)
+    - **One assertion** per test (or use dataProviders)
+    - Descriptive test names (i.e. documentation)
+    - Avoid DRY/abstractions (linear and transparent behavior)
 
 ### Code Coverage
 
@@ -38,19 +47,20 @@
 - [ ] Generate coverage report
     - `ddev exec vendor/bin/phpunit --coverage-html coverage/`
 - [ ] Open `coverage/index.html` in browser
-- [ ] Identify untested code paths (red/yellow indicators)
+    - https://unit-testing-workshop.ddev.site/coverage/
+- [ ] Identify untested code paths
 - [ ] Write one more test to improve coverage
 
 ### AI-Assisted Testing
 
-- [ ] Use Claude to generate remaining tests
+- [ ] Use Claude to generate remaining tests, using MCP
 - [ ] Review AI-generated code quality
-- [ ] Iterate: Ask Claude to refactor/improve
+- [ ] Iterate: Ask Claude to refactor/improve handwritten tests
 - [ ] Run full suite → achieve high coverage
-- [ ] **Discussion: AI workflow patterns**
-    - What prompts work well
-    - When to accept AI suggestions
-    - When to refine manually
+
+### Discussion
+
+- Or look at the Claude project at the bottom
 
 ## Sample Code Structure
 
@@ -64,7 +74,6 @@ workshop-plugin/
 │   ├── phpunit.xml
 │   └── (we'll create these together)
 ├── composer.json
-├── PROMPTS.md                    # AI prompts
 └── README.md                     # This file
 ```
 
