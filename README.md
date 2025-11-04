@@ -67,3 +67,16 @@ workshop-plugin/
 ├── PROMPTS.md                    # AI prompts
 └── README.md                     # This file
 ```
+
+## Claude Project
+
+https://claude.ai/project/01987bbe-7203-7080-a49b-4517ec5a1440
+
+Has a clear understanding of good testing philosophy, and includes capabilities for
+
+- Interactive coach ("What is a good unit test?")
+- Create uniform test suites for uploaded/copy-pasted code
+- Identify testing gaps (provide test file + covered class)
+- Refactor/improve existing tests ("Review and improve the following test suite...")
+- TDD without MCP (AI writes test in chat, you copy-paste tests and write code)
+- TDD with MCP ("Let's start a TDD session", AI writes test files, you write code)
