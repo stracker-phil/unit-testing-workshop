@@ -98,7 +98,7 @@ class BookingProcessor {
 	 * @return string Unique booking ID.
 	 */
 	private function generate_booking_id(): string {
-		return 'BK' . strtoupper( bin2hex( random_bytes( 4 ) ) );
+		return 'BK' . strtoupper( wp_generate_password( 6, false ) );
 	}
 
 	/**
@@ -111,7 +111,8 @@ class BookingProcessor {
 		$hash = md5(
 			$booking['guest_name'] .
 			$booking['room_number'] .
-			$booking['check_in']
+			$booking['check_in'] .
+			$booking['guests']
 		);
 
 		return strtoupper( substr( $hash, 0, 8 ) );

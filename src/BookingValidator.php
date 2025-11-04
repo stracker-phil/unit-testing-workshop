@@ -77,7 +77,7 @@ class BookingValidator {
 			return false;
 		}
 
-		return in_array( $room_number, $this->available_rooms, true );
+		return in_array( $room_number, $this->get_available_rooms(), true );
 	}
 
 	/**
