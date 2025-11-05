@@ -4,28 +4,39 @@
 
 ```bash
 # Run all tests
-ddev exec vendor/bin/phpunit
+ddev exec phpunit
 
 # Run tests with verbose output
-ddev exec vendor/bin/phpunit --testdox
+ddev exec phpunit --testdox
 
 # Run specific test file
-ddev exec vendor/bin/phpunit tests/BookingValidatorTest.php
+ddev exec phpunit tests/BookingValidatorTest.php
 
 # Run a subset of tests based on path filter
-ddev exec vendor/bin/phpunit --filter Booking
+ddev exec phpunit --filter Booking
 
 # "TDD" approach, stop on first failure
-ddev exec vendor/bin/phpunit --stop-on-failure --filter Booking
+ddev exec phpunit --stop-on-failure --filter Booking
 
 # Generate terminal coverage
-ddev exec vendor/bin/phpunit --coverage-text
+ddev exec XDEBUG_MODE=coverage phpunit --coverage-text
 
 # Generate HTML coverage report and open it
-ddev exec vendor/bin/phpunit --coverage-html coverage/
+ddev exec XDEBUG_MODE=coverage phpunit --coverage-html coverage/
 
 open https://unit-testing-workshop.ddev.site/coverage/
 ```
+
+Extra convenience using composer:
+
+```
+"scripts": {
+  "test": "vendor/bin/phpunit",
+  "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --coverage-html coverage/"
+},
+```
+
+Run via `ddev composer coverage`
 
 ## Test Structure Template
 

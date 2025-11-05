@@ -12,7 +12,13 @@
     "php": ">=7.4"
   },
   "scripts": {
+    "test": "vendor/bin/phpunit",
+    "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text --coverage-html coverage/"
   },
   "require-dev": {
+    "phpunit/phpunit": "~9.6.0",
+    "phpmetrics/phpmetrics": "^2.9",
+    "mockery/mockery": "^1.4",
+    "brain/monkey": "^2.6"
   }
 }

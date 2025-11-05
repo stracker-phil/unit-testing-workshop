@@ -5,4 +5,6 @@ declare( strict_types = 1 );
 // Load Composer autoloader.
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
-// Load custom stub classes or methods here, when needed.
+// Initialize Brain\Monkey.
+require_once dirname( __DIR__ ) . '/vendor/brain/monkey/inc/patchwork-loader.php';
+

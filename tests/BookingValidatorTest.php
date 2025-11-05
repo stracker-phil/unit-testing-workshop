@@ -5,6 +5,8 @@
 
 declare( strict_types = 1 );
 
+namespace tests;
+
 use PHPUnit\Framework\TestCase;
 use WorkshopPlugin\BookingValidator;
 
@@ -27,5 +29,18 @@ class BookingValidatorTest extends TestCase {
 		$result = $this->validator->validate( $booking );
 
 		$this->assertTrue( $result );
+	}
+
+	public function test_validate_rejects_invalid_booking(): void {
+		$booking = [
+			'guest_name'  => 'John Doe',
+			'room_number' => '101',
+			'check_in'    => '2025-12-25',
+			'guests'      => 5,
+		];
+
+		$result = $this->validator->validate( $booking );
+
+		$this->assertFalse( $result );
 	}
 }

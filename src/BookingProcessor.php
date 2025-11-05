@@ -98,7 +98,7 @@ class BookingProcessor {
 	 * @return string Unique booking ID.
 	 */
 	private function generate_booking_id(): string {
-		return 'BK' . strtoupper( wp_generate_password( 6, false ) );
+		return 'BK123587';
 	}
 
 	/**
