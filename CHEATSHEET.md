@@ -15,6 +15,9 @@ ddev exec vendor/bin/phpunit tests/BookingValidatorTest.php
 # Run a subset of tests based on path filter
 ddev exec vendor/bin/phpunit --filter Booking
 
+# "TDD" approach, stop on first failure
+ddev exec vendor/bin/phpunit --stop-on-failure --filter Booking
+
 # Generate terminal coverage
 ddev exec vendor/bin/phpunit --coverage-text
 
